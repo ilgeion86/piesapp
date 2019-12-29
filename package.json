@@ -1,0 +1,23 @@
+{
+  "name": "piesapp",
+  "version": "1.0.0",
+  "description": "system of orders accounting",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilgeion86/piesapp.git"
+  },
+  "keywords": [
+    "pies",
+    "homepies"
+  ],
+  "author": "Vy (ks031088@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilgeion86/piesapp/issues"
+  },
+  "homepage": "https://github.com/ilgeion86/piesapp#readme"
+}
