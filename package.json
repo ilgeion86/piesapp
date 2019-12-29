@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/ilgeion86/piesapp/issues"
   },
-  "homepage": "https://github.com/ilgeion86/piesapp#readme"
+  "homepage": "https://github.com/ilgeion86/piesapp#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
