@@ -1,27 +1,32 @@
 {
-  "name": "piesapp",
-  "version": "1.0.0",
-  "description": "system of orders accounting",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ilgeion86/piesapp.git"
-  },
-  "keywords": [
-    "pies",
-    "homepies"
-  ],
-  "author": "Vy (ks031088@gmail.com)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ilgeion86/piesapp/issues"
-  },
-  "homepage": "https://github.com/ilgeion86/piesapp#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "pg": "^7.16.1"
-  }
+    "name": "piesapp",
+    "version": "1.0.0",
+    "description": "system of orders accounting",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "reloadDev": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ilgeion86/piesapp.git"
+    },
+    "keywords": [
+        "pies",
+        "homepies"
+    ],
+    "author": "Vy (ks031088@gmail.com)",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ilgeion86/piesapp/issues"
+    },
+    "homepage": "https://github.com/ilgeion86/piesapp#readme",
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "pg": "^7.16.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.2"
+    }
 }
