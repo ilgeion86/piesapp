@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ilgeion86/piesapp#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^7.16.1"
   }
 }
