@@ -16,6 +16,6 @@ module.exports.createHash = function(password) {
     return { salt: this.salt, hash: this.hash }
 }
 
-module.exports.compareHash = function(salt, interior_hash, external_password) {
-    return encrypt(external_password, this.salt)
+module.exports.hashForCompare = function(salt, external_password) {
+    return encrypt(external_password, salt)
 }
