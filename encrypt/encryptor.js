@@ -1,22 +1,21 @@
 const crypto = require('crypto')
 
+function encrypt(password, salt) {
+    return crypto.createHash('sha512')
+        .update(password + salt)
+        .digest('hex')
+}
+
 module.exports.createHash = function(password) {
     this.salt = Math.round(
         (new Date().valueOf() * Math.random())
     ) + ''
 
-    this.hash = crypto.createHash('sha512')
-        .update(password + this.salt)
-        .digest('hex')
+    this.hash = encrypt(password, this.salt)
 
     return { salt: this.salt, hash: this.hash }
 }
 
 module.exports.compareHash = function(salt, interior_hash, external_password) {
-    this.hash = crypto.createHash('sha512')
-        .update(external_password + salt)
-        .digest('hex')
-
-    if (this.hash === interior_hash) return true
-
+    return encrypt(external_password, this.salt)
 }
