@@ -1,3 +1,4 @@
+const Users = new require('../model/users')
 module.exports.index = function(req, res) {
-    res.send('index.hbs') //render
+    res.send('Hello World!') //render
 }
