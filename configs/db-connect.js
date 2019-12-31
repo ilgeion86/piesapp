@@ -1,4 +1,3 @@
-require('dotenv').config()
 const { Pool } = require('pg')
 
 module.exports.initdb = function(user = 'slava', password = '1234567') {
