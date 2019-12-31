@@ -3,7 +3,7 @@ module.exports = {
         if (req.isAuthenticated()) {
             return next()
         }
-        res.send('Not authenticated')
+        res.render('login.ejs')
     },
 
     checkNotAuthenticated: function(req, res, next) {
