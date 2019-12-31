@@ -35,6 +35,19 @@ Users.prototype.getUserByName = async function(name, callback) {
     }
 }
 
+Users.prototype.getUserById = async function(id, callback) {
+    const client = await db.connect()
+    const query = "SELECT * FROM USERS WHERE uid = $1"
+    try {
+        const data = await db.query(query, [id])
+        callback(data.rows[0])
+    } catch (e) {
+        console.log(e)
+    } finally {
+        client.release()
+    }
+}
+
 module.exports = Users
 
 //let quert = new Users()
