@@ -2,3 +2,4 @@
 node_modules/
 certificates/private.key
 firstUser.txt
+.env

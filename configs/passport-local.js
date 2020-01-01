@@ -36,7 +36,7 @@ module.exports = async function(passport) {
         authenticateUser))
 
     passport.serializeUser((user, done) => {
-        done(null, user.id)
+        done(null, user.uid)
     })
 
     passport.deserializeUser((id, done) => {
