@@ -3,7 +3,10 @@ this.get = Object.create(null)
 this.delete = Object.create(null)
 this.post = Object.create(null)
 this.get.index = function(req, res) {
-    res.render('index.ejs')
+    res.render('index.ejs', {
+        user: req.user.name,
+        role: req.user.role
+    })
 }
 this.get.login = function(req, res) {
     res.render('login.ejs', { error: req.flash('error') || [] })
