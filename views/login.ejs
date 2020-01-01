@@ -1,13 +1,15 @@
 <h1>Login page</h1>
-
-<form action="/login" method="POST">
-    <div>
-        <Label for="username">Username:</Label>
-        <input type="text" id="username" name="username">
-    </div>
-    <div>
-        <Label for="password">Password:</Label>
-        <input type="text" id="password" name="password">
-    </div>
-    <button type="submit">Войти</button>
-</form>
+<% if (error) {%>
+    <%= error%>
+        <%}%>
+            <form action="/login" method="POST">
+                <div>
+                    <Label for="username">Username:</Label>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div>
+                    <Label for="password">Password:</Label>
+                    <input type="text" id="password" name="password">
+                </div>
+                <button type="submit">Войти</button>
+            </form>
