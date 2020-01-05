@@ -1,12 +1,20 @@
-a(href="about.html") О нас
-h1 Login page
-if error
-    h3 #{error}
-form(action="/login" method="POST")
+extend layouts/layout.pug
+block style
+    style
+      include ../cssStyles/login.css
+block content
     div
-        label(for="username") Username:
-        input(type="text" id="username" name="username")
-    div
-        label(for="password") Password:
-        input(type="text" id="password" name="password")
-    button(type="submit") Enter
+    a.info(href="about.html") Info
+    h1 Login page
+    if error
+        h3 #{error}
+    form(action="/login" method="POST")
+        div
+            label(for="username") Username:
+            input(type="text" id="username" name="username")
+        div
+            label(for="password") Password:
+            input(type="text" id="password" name="password")
+        button(type="submit") Enter
+    script(type='text/javascript').
+        console.log('Login page!')               
