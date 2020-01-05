@@ -4,8 +4,10 @@ const delRes = require('../responses/deleteResponses')
 this.get = Object.create(null)
 this.delete = Object.create(null)
 this.post = Object.create(null)
+
+
 this.get.index = function(req, res) {
-    res.render('index.ejs', {
+    res.render('index', {
         user: req.user.name,
         role: req.user.role
     })

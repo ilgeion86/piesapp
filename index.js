@@ -18,7 +18,7 @@ const override = require('method-override')
 
 
 
-
+app.set('view engine', 'pug')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express_session({
