@@ -15,10 +15,11 @@ const certificates = {
     key: fs.readFileSync('./certificates/private.key')
 }
 const override = require('method-override')
-
+const auth = require('./secondaryFunctions/checkAuthenticate')
 
 
 app.set('view engine', 'pug')
+app.use(express.static(__dirname + "/public"))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express_session({
