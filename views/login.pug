@@ -1,20 +1,29 @@
-extend layouts/layout.pug
+extend layouts/login-layout.pug
+block title
+  title Login page
 block style
-    style
-      include ../cssStyles/login.css
+  style
+    include ../cssStyles/login.css
 block content
-    div
-    a.info(href="about.html") Info
-    h1 Login page
-    if error
-        h3 #{error}
-    form(action="/login" method="POST")
-        div
-            label(for="username") Username:
-            input(type="text" id="username" name="username")
-        div
-            label(for="password") Password:
-            input(type="text" id="password" name="password")
-        button(type="submit") Enter
-    script(type='text/javascript').
-        console.log('Login page!')               
+  div.root_login_containter
+    ul.menu
+      li 
+        a.info(href="about.html") Дополнительная информация
+      
+      form(action="/login" method="POST")
+        div.login_cantainer
+          div
+            //label(for="username") Username:
+            input(type="text" id="username" name="username" value="user name")
+          div
+            //label(for="password") Password:
+            input(type="text" id="password" name="password" value="password")
+          button.btn_enter(type="submit") Войти
+    div.error_containter
+      if error
+        h4.error #{error}
+block scripts
+  script
+    include ../javascripts/login.js
+  script(type='text/javascript').
+    
