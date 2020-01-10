@@ -37,8 +37,13 @@
     },
     "devDependencies": {
         "assert": "^2.0.0",
+        "gulp": "^4.0.2",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-stylus": "^2.7.0",
+        "gulp-util": "^3.0.8",
         "mocha": "^6.2.2",
         "nodemon": "^2.0.2",
+        "stylus": "^0.54.7",
         "supertest": "^4.0.2"
     }
 }
