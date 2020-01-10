@@ -7,7 +7,7 @@ gulp.task('styl', function() {
         .pipe(sourcemaps.init())
         .pipe(stylus())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('css'))
+        .pipe(gulp.dest('./public/css'))
 })
 
 gulp.task('watch', function() {

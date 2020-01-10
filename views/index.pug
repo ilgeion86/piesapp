@@ -1,13 +1,13 @@
 extend layouts/layout.pug
 block title
   title Main page
-block style
-  style
-    include ../css/index.css
+block style 
+  link(rel="stylesheet" type="text/css" href="/css/index.css")
 
 block content
   h1 Hi #{user} your role is #{role}
   form(action="/logout?_method=DELETE" method="POST")
     button(type="submit") Exit
+  div Hello world
 
 block scripts
