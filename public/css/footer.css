@@ -1,7 +1,10 @@
-.footer {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 350px;
-    margin-left: -175px;
+.custom-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
+.custom-footer > div {
+  text-align: center;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZvb3Rlci5zdHlsIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksVUFBUyxTQUFUO0VBQ0EsUUFBTyxFQUFQO0VBQ0EsT0FBTSxLQUFOOztBQUNKO0VBQ0ksWUFBVyxPQUFYIiwiZmlsZSI6ImZvb3Rlci5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY3VzdG9tLWZvb3RlclxuICAgIHBvc2l0aW9uIGFic29sdXRlXG4gICAgYm90dG9tIDAgICAgXG4gICAgd2lkdGggMTAwJVxuLmN1c3RvbS1mb290ZXIgPiBkaXZcbiAgICB0ZXh0LWFsaWduIGNlbnRlciJdfQ== */

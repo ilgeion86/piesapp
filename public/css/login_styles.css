@@ -1,2 +1,5 @@
 @import url(desctop/login.css);
 @import url(mobile/login_mobile.css) (max-device-width:480px);
+div.container-error {
+    margin-top: 5px;
+}

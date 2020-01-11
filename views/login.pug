@@ -4,25 +4,60 @@ block title
 block style
   link(rel="stylesheet" type="text/css" href="/css/login_styles.css")
 block content
-  div.root_login_containter
-    ul.menu
-      li 
-        a.info(href="about.html") Дополнительная информация
-      
-      form(action="/login" method="POST")
-        div.login_cantainer
-          div
-            //label(for="username") Username:
-            input(type="text" id="username" name="username" value="user name")
-          div
-            //label(for="password") Password:
-            input(type="text" id="password" name="password" value="password")
-          button.btn_enter(type="submit") Войти
-    div.error_containter
-      if error
-        h4.error #{error}
+  
+  div.container-custom
+    div.container
+      h5 Login page
+    div.container
+      form(action='/login' method="POST")
+        div.form-group
+          label(for="username")
+          input.form-control(id="username" name="username" type="text" placeholder="Enter user name" )
+        div.form-group
+          label(for="password")
+          input.form-control(id="password" name="password" type="text" placeholder="Password")
+        div.form-group.form-check
+          input.form-check-input(type="checkbox" id="check1")
+          label.form-check-label(for="check1") Check me out
+        button.btn.btn-primary(type="submit") Войти
+        
+        div.container-error
+          if error
+            if error=="Missing credentials"
+              script.
+                let node = document.querySelector("div.container-error")
+                let elt = document.createElement("p")
+                let text = document.createTextNode("Не был введен логин или пароль. Повторите попытку")
+                elt.className = "alert alert-danger"
+                elt.setAttribute('role','alert')
+                elt.appendChild(text)
+                node.appendChild(elt)
+              //p.alert.alert-danger(role="alert").
+              //Не был введен логин или пароль. Повторите попытку
+            else
+              if error == "User with that name does not exist"
+                script.
+                  let node = document.querySelector("div.container-error")
+                  let elt = document.createElement("p")
+                  let text = document.createTextNode("Пользователь с такми именем не существует")
+                  elt.className = "alert alert-danger"
+                  elt.setAttribute('role','alert')
+                  elt.appendChild(text)
+                  node.appendChild(elt)
+              else 
+                if error =="Incorrect password"
+                  script.
+                    let node = document.querySelector("div.container-error")
+                    let elt = document.createElement("p")
+                    let text = document.createTextNode("Некорректный пароль")
+                    elt.className = "alert alert-danger"
+                    elt.setAttribute('role','alert')
+                    elt.appendChild(text)
+                    node.appendChild(elt)
+
+
 block scripts
   script
     include ../javascripts/login.js
-  script(type='text/javascript').
+  
     

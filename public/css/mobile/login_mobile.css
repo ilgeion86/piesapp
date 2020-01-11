@@ -3,11 +3,17 @@
   padding: 0;
 }
 html {
-  font-size: 28px;
+  font-size: 16px;
 }
 body {
-  background-color: #ffc0cb;
-  color: #008000;
+  background: #808080;
+  color: #800080;
+}
+.container-custom {
+  width: 100%;
+  margin: 0;
+  top: 0;
+  left: 0;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxvZ2luX21vYmlsZS5zdHlsIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0ksUUFBTyxFQUFQO0VBQ0EsU0FBUSxFQUFSOztBQUNKO0VBQ0ksV0FBVSxLQUFWOztBQUNKO0VBQ0ksa0JBQWlCLFFBQWpCO0VBQ0EsT0FBTSxRQUFOIiwiZmlsZSI6ImxvZ2luX21vYmlsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIkbWFpbl9iYWNrX2NvbG9yID0gcGlua1xuJG1haW5fdGV4dF9jb2xvciA9IGdyZWVuXG4qXG4gICAgbWFyZ2luIDBcbiAgICBwYWRkaW5nIDBcbmh0bWxcbiAgICBmb250LXNpemUgMjhweFxuYm9keVxuICAgIGJhY2tncm91bmQtY29sb3IgJG1haW5fYmFja19jb2xvclxuICAgIGNvbG9yICRtYWluX3RleHRfY29sb3IiXX0= */
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxvZ2luX21vYmlsZS5zdHlsIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksUUFBTyxFQUFQO0VBQ0EsU0FBUSxFQUFSOztBQUNKO0VBQ0ksV0FBVSxLQUFWOztBQUNKO0VBQ0ksWUFBVyxRQUFYO0VBQ0EsT0FBTSxRQUFOOztBQUNKO0VBQ0ksT0FBTSxLQUFOO0VBQ0EsUUFBTyxFQUFQO0VBQ0EsS0FBSSxFQUFKO0VBQ0EsTUFBSyxFQUFMIiwiZmlsZSI6ImxvZ2luX21vYmlsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIqXG4gICAgbWFyZ2luIDBcbiAgICBwYWRkaW5nIDBcbmh0bWxcbiAgICBmb250LXNpemUgMTZweFxuYm9keVxuICAgIGJhY2tncm91bmQgZ3JleVxuICAgIGNvbG9yIHB1cnBsZVxuLmNvbnRhaW5lci1jdXN0b21cbiAgICB3aWR0aCAxMDAlXG4gICAgbWFyZ2luIDBcbiAgICB0b3AgMFxuICAgIGxlZnQgMFxuICAgICJdfQ== */
