@@ -1,0 +1,2 @@
+@import url(desctop/index.css);
+@import url(mobile/index_mobile.css) (max-device-width:480px);

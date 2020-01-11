@@ -23,6 +23,7 @@ gulp.task('styl_desctop', function() {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./public/css/desctop'))
 })
+
 gulp.task('watch', function() {
     gulp.watch(
         [
@@ -30,5 +31,5 @@ gulp.task('watch', function() {
             'stylus/mobile/*.styl',
             'stylus/desctop/*.styl'
         ],
-        gulp.series('styl', 'styl_desctop'))
+        gulp.series('styl', 'styl_desctop', 'styl_mobile'))
 })
