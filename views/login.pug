@@ -4,7 +4,6 @@ block title
 block style
   link(rel="stylesheet" type="text/css" href="/css/login_styles.css")
 block content
-  
   div.container-custom
     div.container
       h5 Login page
@@ -20,44 +19,39 @@ block content
           input.form-check-input(type="checkbox" id="check1")
           label.form-check-label(for="check1") Check me out
         button.btn.btn-primary(type="submit") Войти
-        
         div.container-error
-          if error
-            if error=="Missing credentials"
-              script.
-                let node = document.querySelector("div.container-error")
-                let elt = document.createElement("p")
-                let text = document.createTextNode("Не был введен логин или пароль. Повторите попытку")
-                elt.className = "alert alert-danger"
-                elt.setAttribute('role','alert')
-                elt.appendChild(text)
-                node.appendChild(elt)
-              //p.alert.alert-danger(role="alert").
-              //Не был введен логин или пароль. Повторите попытку
-            else
-              if error == "User with that name does not exist"
-                script.
-                  let node = document.querySelector("div.container-error")
-                  let elt = document.createElement("p")
-                  let text = document.createTextNode("Пользователь с такми именем не существует")
-                  elt.className = "alert alert-danger"
-                  elt.setAttribute('role','alert')
-                  elt.appendChild(text)
-                  node.appendChild(elt)
-              else 
-                if error =="Incorrect password"
-                  script.
-                    let node = document.querySelector("div.container-error")
-                    let elt = document.createElement("p")
-                    let text = document.createTextNode("Некорректный пароль")
-                    elt.className = "alert alert-danger"
-                    elt.setAttribute('role','alert')
-                    elt.appendChild(text)
-                    node.appendChild(elt)
-
-
 block scripts
-  script
-    include ../javascripts/login.js
-  
-    
+  if error != ""
+    script.
+      const error = "#{error}"
+      let text
+      switch (error) {
+        case "Missing credentials":
+          text = document.createTextNode("Небыли введены данные.")
+          break;
+        case "Incorrect password":
+          text = document.createTextNode("Некорректный пароль.")
+          break;
+        case "User with that name does not exist":
+          text = document.createTextNode("Пользователь с таким именем не существует")
+          break;
+        default:
+          text = ""
+          break;
+        }
+      const node = document.querySelector("div.container-error")
+      const elt = document.createElement("p")
+      elt.className = "alert alert-danger"
+      elt.setAttribute('role', 'alert')
+      if (text.length != 0) {
+        elt.appendChild(text)
+        node.appendChild(elt)
+      }
+
+
+
+
+  //p.alert.alert-danger(role="alert").
+  //Не был введен логин или пароль. Повторите попытку
+
+
