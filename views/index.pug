@@ -1,13 +1,9 @@
-extend layouts/layout.pug
+extend layouts/layout-in.pug
 block title
   title Main page
 block style 
-  //link(rel="stylesheet" type="text/css" href="/css/index_styles.css")
+  link(rel="stylesheet" type="text/css" href="/css/index_styles.css")
 
 block content
-  h1 Hi #{user} your role is #{role}
-  form(action="/logout?_method=DELETE" method="POST")
-    button(type="submit") Exit
-  div Hello world
 
 block scripts

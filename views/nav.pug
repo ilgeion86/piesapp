@@ -1,0 +1,24 @@
+div.container-fluid.text-light
+  nav.navbar.navbar-expand-lg.navbar-light.justify-content-between
+    a.navbar-brand(href="#") HomePies
+
+    button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+    
+    div#navbarNav.collapse.navbar-collapse
+        ul.navbar-nav
+            li.nav-tem.active.text-center                
+                
+                a.nav-link(href="#") Новый заказ
+                
+            li.nav-tem.active
+                a.nav-link(href="#") На главную
+            li.nav-tem.active
+                a.nav-link(href="#") На главную
+        
+    div
+        form.form-inline.my-2.my-lg-0(action="/logout?_method=DELETE" method="POST")
+            div.d-col.text-center
+                div Пользователь #{user}
+                button.sbmt(type="submit") Exit                       
+            
