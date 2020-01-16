@@ -34,7 +34,7 @@ app.use(override('_method'))
 app.use('/', homeRouter)
 
 const $app_https = https.createServer(certificates, app)
-    .listen(process.env.PORT, process.env.HOST)
+    .listen(process.env.PORT, process.env.HOST) //'92.253.133.22'
 
 $app_https.on('listening', () => {
     console.log("Server is working", 'PORT=', process.env.PORT, " HOST=", process.env.HOST)

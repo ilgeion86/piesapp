@@ -4,6 +4,221 @@ block title
 block style 
   link(rel="stylesheet" type="text/css" href="/css/index_styles.css")
 block content
+  div.container-sm.border.float-left
+    ul.nav.nav-tabs
+      li.nav-item
+        a.nav-link.active(data-toggle="tab" href="#order") Заказ
+      li.nav-item
+        a.nav-link(data-toggle="tab" href="#details") Детали
+      li.nav-item
+        a.nav-link(data-toggle="tab" href="#marks") Отметки
 
+    div.tab-content.border.float-left
+      div#order.tab-pane.container.active
+        table.table.text-center
+          thead
+            tr
+              th(scope="col") Наименование
+              th(scope="col") Количество
+              th(scope="col") Цена
+              th(scope="col") Стоимость
+          tbody
+            tr
+              td.name
+              td.count
+                input.change.text-center(value=1)
+              td.price 100
+              td.total 100
+            tr
+              td.name
+              td.count
+                input.change.text-center(value=1)
+              td.price 100
+              td.total 100
+            tr
+              td.name
+              td.count
+                input.change.text-center(value=1)
+              td.price 100
+              td.total 100
+
+
+          
+
+
+      div#details.tab-pane.container.fade
+        div Details will be here
+      
+      div#marks.tab-pane.container.fade
+        div Marks will be here
+    div.float-left
+      div
+        button asdasdasda
+      div
+        button asdasdasda
+      div
+        button asdasdasda
+      div
+        button asdasdasda
+    div.float-left(style="min-width:400px;max-width:600px")
+      div
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        div.float-left texttext text
+          div.text-center Price
+        
+      
 
 block scripts
+  script.
+    let node = document.querySelectorAll(".change")
+    let arrNodes = Array.prototype.slice.call(node)
+    for(let i = 0; i<arrNodes.length;i++){
+      let parent = arrNodes[i].parentNode.parentNode
+    arrNodes[i].addEventListener("change",()=>{
+      console.log(parent)
+      let price = parent.querySelector(".price")
+      let total = parent.querySelector(".total")
+      total.textContent = price.textContent * arrNodes[i].value
+    })
+    }
