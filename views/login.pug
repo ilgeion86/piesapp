@@ -4,22 +4,21 @@ block title
 block style
   link(rel="stylesheet" type="text/css" href="/css/login_styles.css")
 block content
-  div.container-custom
-    div.container.text-center
-      h5 Login page
-    div.container
-      form(action='/login' method="POST")
-        div.form-group
-          label(for="username")
-          input.form-control.rounded-pill(id="username" name="username" type="text" placeholder="Enter user name" )
-        div.form-group
-          label(for="password")
-          input.form-control.rounded-pill(id="password" name="password" type="text" placeholder="Password")
-        div.form-group.form-check
-          input.form-check-input(type="checkbox" id="check1")
-          label.form-check-label(for="check1") Check me out
-        button.btn.btn-primary.rounded-pill(type="submit") Войти
-        div.container-error
+  div.grid-container        
+      div.grid-item__login-form
+        div.grid-item__header
+          h2 Login
+          form(action='/login' method="POST")
+            div.form-group
+              label(for="username")
+              input.form-control( id="username" name="username" type="text" placeholder="Enter user name" )
+            div.form-group
+              label(for="password")
+              input.form-control(id="password" name="password" type="text" placeholder="Password")
+
+            button.btn-submit(type="submit") Войти
+            div.container-error
+
 block scripts
   if error != ""
     script.
@@ -41,9 +40,8 @@ block scripts
         }
       const node = document.querySelector("div.container-error")
       const elt = document.createElement("p")
-      elt.className = "alert alert-danger rounded-pill"
-      elt.setAttribute('role', 'alert')
       if (text.length != 0) {
+        elt.className = "alert"
         elt.appendChild(text)
         node.appendChild(elt)
       }

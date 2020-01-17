@@ -1,11 +1,16 @@
-.custom-footer
-    position absolute
-    bottom 0    
-    width 100%
-.custom-footer > div
-    text-align center
-.container-custom
-    margin-top 10px
-@media (max-device-width:320px)
-    footer 
-        font-size 0.8em
+footer
+  position absolute
+  bottom 0
+  width:100%
+.footer_text-style
+  text-align center
+  color rgba(125,125,125,0.5)
+  animation linear 10s infinite alternate pulse
+
+@keyframes pulse
+  for i in 5..10
+    {10% * i}
+      opacity (i/10)
+@media(max-device-width:480px)
+  .footer_text-style
+    font-size 0.6em
