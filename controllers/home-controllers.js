@@ -9,8 +9,7 @@ this.post = Object.create(null)
 this.get.index = function(req, res) {
     res.render('index', {
         user: req.user.name,
-        role: req.user.role,
-        bool: true
+        role: req.user.role
     })
 }
 this.get.login = function(req, res) {

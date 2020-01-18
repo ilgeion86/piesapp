@@ -1,40 +1,62 @@
-div.container-sm
-  nav.navbar.navbar-expand-lg.navbar-light.justify-content-between
-    a.navbar-brand(href="/") HomePies
-
-    button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
-        span.navbar-toggler-icon
-    
-    div#navbarNav.collapse.navbar-collapse
-        ul.navbar-nav.text-center
-            li.nav-tem.active
-                a.nav-link(href="/") 
-                    img.img-font-size(src="icons/plus.png")
-                    div Новый заказ
-            li.nav-tem.active
-                a.nav-link(href="#") 
-                    img.img-font-size(src="icons/list.png")
-                    div Заказы
-            li.nav-tem.active
-                a.nav-link(href="#") 
-                    img.img-font-size(src="icons/terms-and-conditions.png")
-                    div Справочники
-            li.nav-tem.active
-                
-                a.nav-link(href="#") 
-                    img.img-font-size(src="icons/garage-closed.png")
-                    div Склад
-            li.nav-tem.active
-                a.nav-link(href="#") 
-                    img.img-font-size(src="icons/keypad.png")
-                    div Статистика
-            li.nav-tem.active
-                a.nav-link(href="#") ...
-
-        
+nav.grid-navigation
+  div.grid-item.grid-item_brand
+    span.brand-name HomePies
     div
-        form.form-inline.my-2.my-lg-0(action="/logout?_method=DELETE" method="POST")
-            div.d-col.text-center
-                div.text-info Пользователь #{user}
-                button.sbmt(type="submit") Exit                       
-            
+      button.grid-item__open-menu.unactive
+        img.icon-small(src="./icons/menu--v1.png")
+  div.grid-item.grid-item_navigation-menu
+    div.menu-block
+      a(href="/") 
+        div
+          img(src="./icons/plus.png")
+        div Новый заказ
+    div.menu-block
+      a(href="/")
+        div 
+          img(src="./icons/list.png")
+        div Заказы
+    div.menu-block
+      a(href="#")        
+        div 
+          img(src="./icons/terms-and-conditions.png")
+        div Справочники
+    div.menu-block
+      a(href="#")
+        div 
+          img(src="./icons/garage-closed.png")
+        div Склад
+    div.menu-block
+      a(href="#")
+        div 
+          img(src="./icons/keypad.png")
+        div Статистика
+  div.grid-item.grid-item_user-info
+    form(action="/logout?_method=DELETE" method="POST")
+      div.user-info
+        span.user-info_name Пользователь &nbsp 
+        span #{user}
+      button.btn-submit(type="submit") Exit
+script.
+  let toogle_menu = document.querySelector(".grid-item__open-menu") 
+  let grid_navigation_menu= document.querySelector(".grid-item_navigation-menu")
+  let grid_nav= document.querySelector(".grid-navigation")
+  console.log(toogle_menu)
+  window.addEventListener("resize",()=>{
+      if (window.screen.width>=1366){
+        toogle_menu.className = "grid-item__open-menu active"
+        grid_navigation_menu.style = "display:inline"  
+      }
+  })
+  toogle_menu.addEventListener("click",()=>{
+    let attributes = toogle_menu.getAttribute("class").split(" ")
+    attributes.find((e,i,attributes)=>{
+      if(e === "unactive"){
+        toogle_menu.className = "grid-item__open-menu active"
+        grid_navigation_menu.style = "display:inline"
+
+      } else if (e === "active"){
+        toogle_menu.className = "grid-item__open-menu unactive"
+        grid_navigation_menu.style = "display:none"
+      }
+    })
+  })

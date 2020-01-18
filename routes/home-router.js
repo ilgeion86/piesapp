@@ -14,5 +14,7 @@ router.post('/login', passport.authenticate('local', {
 
 router.delete('/logout', controllers.delete.logout)
 
+//Ignore flavicon.ico
+router.get('/favicon.ico', (req, res) => res.status(204))
 
 module.exports = router

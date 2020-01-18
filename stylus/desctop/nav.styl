@@ -1,0 +1,69 @@
+.grid-navigation
+    display grid
+    grid-template-columns auto 5fr minmax(100px,1fr)
+    grid-template-rows minmax(auto,1fr) 
+    grid-template-areas "brand nav-menu user-info"
+    background-color:#165D8D;
+    padding 5px
+
+.grid-item_brand
+    grid-area brand
+    align-self center
+
+.user-info
+    overflow scroll
+
+
+.grid-item_navigation-menu
+    margin 5px 
+    grid-area nav-menu   
+    align-self center
+    a
+        text-decoration none
+        color white
+
+.grid-item_user-info
+    grid-area user-info
+    text-align center
+button.grid-item__open-menu
+    background none
+    display none        
+.menu-block
+    float left
+    text-align center
+    img 
+        width 50px
+    margin-right 10px
+.menu-block:hover
+    background-color rgba(125,220,98,0.5)
+
+@media (max-device-width:870px)
+    .user-info_name
+        display none
+    .grid-navigation
+        border 1px solid black
+        font-size 16px
+        grid-template-rows minmax(auto,1fr)  minmax(auto,auto)
+        grid-template-areas "brand . user-info"\
+                            " nav-menu nav-menu nav-menu"
+    .grid-item_navigation-menu
+        align-self center
+        justify-self center
+        display none
+    .menu-block 
+        font-size 12px
+        img 
+            width 30px
+
+    button.grid-item__open-menu
+        position absolute
+        top 7px
+        left 50%
+        margin-left -15px
+        border 1px solid black
+        display inline
+    button.grid-item__open-menu:hover
+        background-color rgba(125,220,98,0.5)
+    
+    .grid-item_user-info
+        text-align right
