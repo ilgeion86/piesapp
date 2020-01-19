@@ -49,8 +49,3 @@ Users.prototype.getUserById = async function(id, callback) {
 }
 
 module.exports = Users
-
-//let quert = new Users()
-//quert.getUserByName('Vy', (data) => {
-//    console.log(data)
-//})

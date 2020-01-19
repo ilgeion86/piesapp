@@ -11,6 +11,5 @@ module.exports = {
             return res.redirect('/')
         }
         next()
-
     }
 }

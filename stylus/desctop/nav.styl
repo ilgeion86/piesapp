@@ -10,9 +10,6 @@
     grid-area brand
     align-self center
 
-.user-info
-    overflow scroll
-
 
 .grid-item_navigation-menu
     margin 5px 
@@ -36,8 +33,13 @@ button.grid-item__open-menu
     margin-right 10px
 .menu-block:hover
     background-color rgba(125,220,98,0.5)
+@media (max-device-width:900px)
+    .menu-block 
+        font-size 0.6em
+        img 
+            width 40px
 
-@media (max-device-width:870px)
+@media (max-device-width:620px)
     .user-info_name
         display none
     .grid-navigation
@@ -67,3 +69,5 @@ button.grid-item__open-menu
     
     .grid-item_user-info
         text-align right
+    .user-info
+        overflow scroll
