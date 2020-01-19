@@ -20,36 +20,12 @@ block content
             div.container-error
 
 block scripts
-  if error != ""
+  //- Перевод текста об ошибке логирования    
+  if error !=""
+    script(src="./js/login-errors.js")
     script.
-      const error = "#{error}"
-      let text
-      switch (error) {
-        case "Missing credentials":
-          text = document.createTextNode("Небыли введены данные.")
-          break;
-        case "Incorrect password":
-          text = document.createTextNode("Некорректный пароль.")
-          break;
-        case "User with that name does not exist":
-          text = document.createTextNode("Пользователь с таким именем не существует")
-          break;
-        default:
-          text = ""
-          break;
-        }
-      const node = document.querySelector("div.container-error")
-      const elt = document.createElement("p")
-      if (text.length != 0) {
-        elt.className = "alert"
-        elt.appendChild(text)
-        node.appendChild(elt)
-      }
+      showErr("#{error}")
+    
 
-
-
-
-  //p.alert.alert-danger(role="alert").
-  //Не был введен логин или пароль. Повторите попытку
 
 
