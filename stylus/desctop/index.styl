@@ -10,14 +10,26 @@ html,body
     background-color rgba(173, 221, 255, 1)
 .grid-container
     display grid
-    grid-template-columns 1fr minmax(auto,3fr) 2fr 5fr
+    grid-template-columns 1fr minmax(375px,3fr) 2fr 5fr
     grid-template-rows repeat(4,minmax(1fr,auto))
     grid-template-areas "item1 item1 item2 item2"\
                         "item3 item4 item5 item6"\
                         ". . . ."
 
 for i in 1..6
-    .grid-item{i}
+    .grid-item-{i}
       grid-area item + i
     .color{i}
         background-color rgba(125,125+(i*10),125,1)
+
+@media (max-device-width:800px)    
+        
+    .grid-container
+        grid-template-columns minmax(370px,1fr)
+        grid-template-areas "item1"\
+                        "item2"\
+                        "item3"\
+                        "item4"\
+                        "item5"\
+                        "item6"\
+                        

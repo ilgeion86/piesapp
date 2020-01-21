@@ -1,3 +1,4 @@
+nav-hover=rgba(125,220,98,0.5)
 .grid-navigation
     display grid
     grid-template-columns auto 5fr minmax(100px,1fr)
@@ -5,6 +6,7 @@
     grid-template-areas "brand nav-menu user-info"
     background-color:#165D8D;
     padding 5px
+    min-width 360px
 
 .grid-item_brand
     grid-area brand
@@ -32,7 +34,9 @@ button.grid-item__open-menu
         width 50px
     margin-right 10px
 .menu-block:hover
-    background-color rgba(125,220,98,0.5)
+    background-color nav-hover
+
+//Media queries block    
 @media (max-device-width:900px)
     .menu-block 
         font-size 0.6em
@@ -43,7 +47,6 @@ button.grid-item__open-menu
     .user-info_name
         display none
     .grid-navigation
-        border 1px solid black
         font-size 16px
         grid-template-rows minmax(auto,1fr)  minmax(auto,auto)
         grid-template-areas "brand . user-info"\

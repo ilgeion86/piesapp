@@ -5,11 +5,35 @@ block style
   link(rel="stylesheet" type="text/css" href="/css/index_styles.css")
 block content
   div.grid-container
-    div.grid-item1.color1.border 1
-    div.grid-item2.color2.border 2
-    div.grid-item3.color3.border 3
-    div.grid-item4.color4.border 4
+    div.grid-item-1.color1.border 1
+    div.grid-item-2.color2.border 2
+    div.grid-item-3.color3.border 3
+    div.grid-item-4.color4.border 4
+      p.text-center Information about order
+      //- gc = grid container; gi = grid item ; oi = order-info
+      div.grid-item-4__subgrid
+        div.subgrid__item-1
+          button.b-1(onclick="openTab('order')") Заказ
+        div.subgrid__item-2
+          button.b-2(onclick="openTab('details')") Детали
+        div.subgrid__item-3
+          button.b-3(onclick="openTab('marks')") Отметки
+        div.subgrid__item-4
+          div.subgrid__item__content
+            div#order.tabs Order infoOrder infoOrder infoOrder infoOrder infoOrder infoOrder infoOrder infoOrder infoOrder infoOrder infoOrder info
+            div#details.tabs(style="display:none") Order details
+            div#marks.tabs(style="display:none") Order marks
     div.grid-item5.color4.border 5
     div.grid-item6.color4.border 6
 
 block scripts
+  script.
+    function openTab(cityName) {
+       var i;
+       var x = document.getElementsByClassName("tabs");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+        }
+      document.getElementById(cityName).style.display = "block";
+      }
+    
