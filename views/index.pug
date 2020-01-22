@@ -7,7 +7,7 @@ block content
   div.grid-container
     div.grid-item-1.color1.border 1
     div.grid-item-2.color2.border 2
-    div.grid-item-3.color3.border 3
+    //div.grid-item-3.color3.border 3
     div.grid-item-4.color4.border 4
       p.text-center Information about order
       //- gc = grid container; gi = grid item ; oi = order-info
@@ -20,12 +20,39 @@ block content
           button.b-3(onclick="openTab('marks')") Отметки
         div.subgrid__item-4
           div.subgrid__item__content
-            div#order.tabs Order infoOrder infoOrder infoOrder infoOrder infoOrder infoOrder infoOrder infoOrder infoOrder infoOrder infoOrder info
+            div#order.tabs
+              table#t-order-info.border.text-center
+                thead.border
+                  th Наименование
+                  th Количество
+                  th Цена
+                  th Стоимость
+                tbody
+                  tr.order-row
+                    td Пирог
+                    td
+                      span.border -
+                      input.text-center(type="text" value=2)
+                      span.border +
+                    td 200
+                    td 400
+                  
             div#details.tabs(style="display:none") Order details
             div#marks.tabs(style="display:none") Order marks
-    div.grid-item5.color4.border 5
-    div.grid-item6.color4.border 6
+        p bla bla bla 
+    //-Отображение категорий товаров
+    div.grid-item5.color4.border
+      if categories
+        each val in categories
+          div.category 
+            button #{val.name}
 
+    div.grid-item6.color4.border
+      if products
+        each product in products
+          div.product.border.text-center
+            div.p-name #{product.name}
+            div.p-price 200
 block scripts
   script.
     function openTab(cityName) {
