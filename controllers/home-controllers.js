@@ -9,9 +9,14 @@ this.post = Object.create(null)
 this.get.index = function(req, res) {
     getRes.index(req, res)
 }
+
 this.get.login = function(req, res) {
     getRes.login(req, res)
 }
+this.get.products = function(req, res) {
+    getRes.products(req, res)
+}
+
 module.exports.get = this.get
 
 this.post.login = function(req, res) {

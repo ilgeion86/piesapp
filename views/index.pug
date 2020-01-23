@@ -7,7 +7,7 @@ block content
   div.grid-container
     div.grid-item-1.color1.border 1
     div.grid-item-2.color2.border 2
-    //div.grid-item-3.color3.border 3
+    //-div.grid-item-3.color3.border 3
     div.grid-item-4.color4.border 4
       p.text-center Information about order
       //- gc = grid container; gi = grid item ; oi = order-info
@@ -41,26 +41,17 @@ block content
             div#marks.tabs(style="display:none") Order marks
         p bla bla bla 
     //-Отображение категорий товаров
-    div.grid-item5.color4.border
+    div.grid-item-5.color4.border
       if categories
         each val in categories
-          div.category 
-            button #{val.name}
+          div.category
+            button(onclick="openCategory("+val.c_id+")") #{val.name}
 
-    div.grid-item6.color4.border
-      if products
-        each product in products
-          div.product.border.text-center
-            div.p-name #{product.name}
-            div.p-price 200
+    //-Отображение всех продуктов
+    div.grid-item-6.color4.border
+    
 block scripts
-  script.
-    function openTab(cityName) {
-       var i;
-       var x = document.getElementsByClassName("tabs");
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-        }
-      document.getElementById(cityName).style.display = "block";
-      }
+  script(src="./js/openTab.js")
+  script(src="./js/openCategory.js")
+    
     

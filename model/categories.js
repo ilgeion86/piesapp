@@ -5,7 +5,7 @@ function Categories() {
         this.name
 }
 
-Categories.prototype.getCategories = async function(callback) {
+Categories.prototype.getCategories = function(callback) {
     const query = 'select * from categories'
     runQuery(query, (data) => {
         callback(data.rows)

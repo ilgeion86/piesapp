@@ -1,7 +1,7 @@
 let toogle_menu = document.querySelector(".grid-item__open-menu")
 let grid_navigation_menu = document.querySelector(".grid-item_navigation-menu")
 let grid_nav = document.querySelector(".grid-navigation")
-console.log(toogle_menu)
+
 window.addEventListener("resize", () => {
     if (window.screen.width >= 480) {
         toogle_menu.className = "grid-item__open-menu unactive"
