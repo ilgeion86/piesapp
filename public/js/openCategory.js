@@ -3,49 +3,31 @@ function openCategory(categoryName) {
     while (node.firstChild) {
         node.removeChild(node.firstChild)
     }
-    switch (categoryName) {
-        case 1:
-            let xhr = new XMLHttpRequest()
-            xhr.open('GET', "/products", true) // /products/:id
-            xhr.responseType = 'json'
-            xhr.send(null)
-            xhr.onload = () => {
-                if (xhr.status != 200) {
-                    alert("Problems with loading products")
-                } else {
-                    let res = JSON.parse(xhr.response)
-                    let length = Object.keys(res).length
-                    for (let i = 0; i < length; i++) {
-                        const _div = document.createElement('div')
-                        _div.className = "product border text-center"
-                        _div.appendChild(document.createTextNode(res[i]["name"] + "TEST"))
-                        node.appendChild(_div)
-                    }
 
-
-                }
+    let xhr = new XMLHttpRequest()
+    xhr.open('GET', `/products/${categoryName}`, true) // /products/:id
+    xhr.responseType = 'json'
+    xhr.send(null)
+    xhr.onload = () => {
+        if (xhr.status != 200) {
+            alert("Возникли проблемы с загрузкой данных. Повторите действие позже")
+        } else {
+            let res = JSON.parse(xhr.response)
+            let length = Object.keys(res).length
+            for (let i = 0; i < length; i++) {
+                const $1_div = document.createElement('div')
+                const $2_div = document.createElement('div')
+                const $3_div = document.createElement('div')
+                $1_div.className = "product border text-center"
+                $2_div.appendChild(document.createTextNode(res[i]["name"]))
+                $3_div.appendChild(document.createTextNode(res[i]["price"]))
+                $1_div.appendChild($2_div)
+                $1_div.appendChild($3_div)
+                node.appendChild($1_div)
             }
 
 
-
-            break
-        case 2:
-            console.log(2)
-            break
-        case 3:
-            console.log(3)
-            break
-        case 4:
-            console.log(4)
-            break
-        case 5:
-            console.log(5)
-            break
-        case 6:
-            console.log(6)
-            break
-        default:
-            console.log(7)
-            break
+        }
     }
+
 }

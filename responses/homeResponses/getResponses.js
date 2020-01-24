@@ -31,3 +31,14 @@ module.exports.products = function(req, res) {
         res.json(JSON.stringify(obj))
     })
 }
+
+module.exports.productsId = function(req, res) {
+    let products = new Products()
+    let obj = Object.create(null)
+    products.getPriceAndCategory(req.params["id"], (allProducts) => {
+        allProducts.forEach((product, i) => {
+            obj[i] = product
+        })
+        res.json(JSON.stringify(obj))
+    })
+}

@@ -17,3 +17,16 @@ module.exports.runQuery = async function(queryStr, callback) {
         client.release()
     }
 }
+
+module.exports.runQueryWithParam = async function(queryStr, param, callback) {
+    const client = await db.connect()
+    const query = queryStr
+    try {
+        const data = await db.query(query, [param])
+        callback(data)
+    } catch (e) {
+        console.log(e)
+    } finally {
+        client.release()
+    }
+}
