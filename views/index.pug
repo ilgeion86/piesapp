@@ -27,20 +27,14 @@ block content
                   th Количество
                   th Цена
                   th Стоимость
+                  th 
                 tbody
-                  //tr.order-row
-                    td.order-column_name Пирог
-                    td.order-column_count
-                      span.click-minus.border -1
-                      input.amount.text-center(type="text" value=1)
-                      span.click-plus.border +1
-                    td.product-price 200
-                    td.total-price 400
                   tr.order-total-row
                     td ИТОГО
                     td  
                     td
                     td.order-total-row_total-price 0
+                    td
             div#details.tabs(style="display:none") Order details
             div#marks.tabs(style="display:none") Order marks
         p bla bla bla 
@@ -56,6 +50,6 @@ block content
     
 block scripts
   script(src="./js/openTab.js")
-  script(src="./js/openCategory.js")
-    
+  script(src="./js/orderInfoTableFilling.js")
+  script(src="./js/openCategory.js")  
     
