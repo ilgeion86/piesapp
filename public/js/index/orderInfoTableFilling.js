@@ -36,41 +36,26 @@ function orderInfoTableFilling(name, price) {
 
     let $4_column = document.createElement("td")
     $4_column.className = "total-price"
+        //Calculation of default price for one unit of product
     $4_column.textContent = parseInt($input.value) * price
 
+    //Add button for remove row
     $5_column = document.createElement('td')
     $5_column.className = "btn-remove"
     $5_column.textContent = "X"
 
-
+    //Filling row by data
     row.appendChild($1_column)
     row.appendChild($2_column)
     row.appendChild($3_column)
     row.appendChild($4_column)
     row.appendChild($5_column)
 
+    //Inserting of row into the order info table
     node.insertBefore(row, total_row)
+
+    //Recalculate order total price value
     $order_total_price.textContent =
         parseFloat($order_total_price.textContent) + parseFloat($4_column.textContent)
     removeRowFromOrderInfo($order_total_price)
-}
-
-function removeRowFromOrderInfo($order_total_price) {
-    let e_btn = document.querySelector(".btn-remove")
-    e_btn.className = "e-btn-remove"
-
-    let row = e_btn.parentElement
-
-    const product_total_price = row.querySelector(".total-price")
-
-    let node = row.parentElement
-
-    e_btn.addEventListener("click", function listenerFunc(e) { //Задаем имя функции события слушателя
-        e.preventDefault()
-        node.removeChild(row) //Удаляем элемент из DOM
-        console.log(product_total_price.textContent)
-        $order_total_price.textContent =
-            parseFloat($order_total_price.textContent) - parseFloat(product_total_price.textContent)
-        e_btn.removeEventListener("click", listenerFunc) //Удаляем событие слушателся по имени функции
-    })
 }

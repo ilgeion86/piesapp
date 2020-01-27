@@ -41,7 +41,6 @@ function openCategory(categoryName) {
 }
 
 
-
 function clickMinus(number) {
 
 }
