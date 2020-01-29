@@ -5,11 +5,9 @@ block style
   link(rel="stylesheet" type="text/css" href="/css/index_styles.css")
 block content
   div.grid-container
-    div.grid-item-1.color1.border 1
-    div.grid-item-2.color2.border 2
-    //-div.grid-item-3.color3.border 3
-    div.grid-item-4.color4.border 4
-      p.text-center Information about order
+    div.grid-item-1.color1
+    div.grid-item-2.color2
+    div.grid-item-4.color4
       //- gc = grid container; gi = grid item ; oi = order-info
       div.grid-item-4__subgrid
         div.subgrid__item-1
@@ -37,20 +35,20 @@ block content
                     td
             div#details.tabs(style="display:none") Order details
             div#marks.tabs(style="display:none") Order marks
-        p bla bla bla 
     //-Отображение категорий товаров
-    div.grid-item-5.color4.border
+    div.grid-item-5.color4
       if categories
         each val in categories
           div.category
             button(onclick="openCategory("+val.c_id+")") #{val.name}
 
     //-Отображение всех продуктов
-    div.grid-item-6.color4.border
+    div.grid-item-6.color4
     
 block scripts
   script(src="./js/index/openTab.js")
   script(src="./js/index/removeRowFromOrderInfo.js")
+  script(src="./js/index/InputTotalAmount.js")
   script(src="./js/index/orderInfoTableFilling.js")
   script(src="./js/index/openCategory.js")  
     

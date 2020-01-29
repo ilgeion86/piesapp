@@ -8,6 +8,9 @@ const passport = require('../configs/passport')
 router.get('/', auth.checkAuthenticated, controllers.get.index)
 router.get('/login', auth.checkNotAuthenticated, controllers.get.login)
 router.get('/products', auth.checkAuthenticated, controllers.get.products)
+    /**
+     * @todo To create a new router for /products . . .
+     */
 router.get('/products/:id', auth.checkAuthenticated, controllers.get.productsId)
 
 //Ignore flavicon.ico

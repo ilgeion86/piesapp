@@ -3,7 +3,7 @@ function orderInfoTableFilling(name, price) {
     const productPrice = document.createTextNode(price)
     let node = document.querySelector("table#t-order-info tbody")
     let total_row = document.querySelector("tr.order-total-row")
-    let $order_total_price = document.querySelector("td.order-total-row_total-price")
+    let $order_total_cost = document.querySelector("td.order-total-row_total-price")
     let row = document.createElement("tr")
     row.className = "order-row"
 
@@ -55,7 +55,13 @@ function orderInfoTableFilling(name, price) {
     node.insertBefore(row, total_row)
 
     //Recalculate order total price value
-    $order_total_price.textContent =
-        parseFloat($order_total_price.textContent) + parseFloat($4_column.textContent)
-    removeRowFromOrderInfo($order_total_price)
+    $order_total_cost.textContent =
+        parseFloat($order_total_cost.textContent) +
+        parseFloat($4_column.textContent)
+
+    //After that a row was added in table, use onchange() for input.total-amount
+    changeTotalPrices($input, price, $4_column)
+
+    //Event handing for a button remove of a row (click event)
+    removeRowFromOrderInfo($order_total_cost)
 }
