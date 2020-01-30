@@ -14,7 +14,7 @@ Products.prototype.getProducts = function(callback) {
         callback(data.rows)
     })
 }
-Products.prototype.getPriceAndCategory = function(categoryId, callback) {
+Products.prototype.getProductsByCategoryId = function(categoryId, callback) {
     const query = `
     SELECT
         pro.p_id,

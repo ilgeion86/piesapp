@@ -13,14 +13,7 @@ this.get.index = function(req, res) {
 this.get.login = function(req, res) {
     getRes.login(req, res)
 }
-this.get.products = function(req, res) {
-    getRes.products(req, res)
-}
-this.get.productsId = function(req, res) {
-    getRes.productsId(req, res)
-}
 
-module.exports.get = this.get
 
 this.post.login = function(req, res) {
     postRes.login(req, res)

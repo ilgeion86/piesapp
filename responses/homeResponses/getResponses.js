@@ -1,6 +1,5 @@
 const Users = require("../../model/users")
 const Categories = require("../../model/categories")
-const Products = require("../../model/products")
 
 module.exports.login = function(req, res) {
     res.render('login', {
@@ -10,7 +9,6 @@ module.exports.login = function(req, res) {
 
 module.exports.index = function(req, res) {
     let categories = new Categories()
-    let products = new Products()
     categories.getCategories((allCategories) => {
         res.render('index', {
             categories: allCategories,
@@ -19,26 +17,4 @@ module.exports.index = function(req, res) {
         })
     })
 
-}
-
-module.exports.products = function(req, res) {
-    let products = new Products()
-    let obj = Object.create(null)
-    products.getProducts((allProducts) => {
-        allProducts.forEach((product, i) => {
-            obj[i] = product
-        })
-        res.json(JSON.stringify(obj))
-    })
-}
-
-module.exports.productsId = function(req, res) {
-    let products = new Products()
-    let obj = Object.create(null)
-    products.getPriceAndCategory(req.params["id"], (allProducts) => {
-        allProducts.forEach((product, i) => {
-            obj[i] = product
-        })
-        res.json(JSON.stringify(obj))
-    })
 }

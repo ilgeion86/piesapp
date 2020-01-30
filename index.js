@@ -9,7 +9,8 @@ const cookieParser = require('cookie-parser')
 const flash = require('connect-flash')
 const passport = require('./configs/passport')
 
-const homeRouter = require('./routes/home-router')
+const homeRouter = require('./routes/homeRouter')
+const productsRouter = require('./routes/productsRouter')
 const certificates = {
     cert: fs.readFileSync('./certificates/cert.crt'),
     key: fs.readFileSync('./certificates/private.key')
@@ -31,8 +32,16 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(flash())
 app.use(override('_method'))
-app.use('/', homeRouter)
 
+/**
+ * ROUTES
+ */
+app.use('/', homeRouter)
+app.use('/products', productsRouter)
+
+/**
+ * CREATE SERVER
+ */
 const $app_https = https.createServer(certificates, app)
     .listen(process.env.PORT, process.env.HOST) //'92.253.133.22'
 
