@@ -33,8 +33,18 @@ block content
                     td
                     td.order-total-row_total-price 0
                     td
-            div#details.tabs(style="display:none") Order details
-            div#marks.tabs(style="display:none") Order marks
+            div#details.tabs.border
+              table#t-order-details
+                tbody
+                  if tabDetails
+                    each val in tabDetails
+                      tr
+                        td #{val[0]}
+                        td &nbsp
+                        td
+                          input(class="tabOrderDetailsInput "+val[1])
+            div#marks.tabs Order marks
+      button.createOrder(style="height:50px") Создать заказ
     //-Отображение категорий товаров
     div.grid-item-5.color4
       if categories
