@@ -1,4 +1,5 @@
-const db = require('../configs/db-connect').initdb()
+const run = require('./queryExec/queryExecute')
+const query = require('./queries/users')
 
 /**
  * Users it is a table of database
@@ -23,29 +24,15 @@ function Users() {
  * field name is unique
  */
 Users.prototype.getUserByName = async function(name, callback) {
-    const client = await db.connect()
-    const query = "SELECT * FROM USERS WHERE name = $1"
-    try {
-        const data = await db.query(query, [name])
-        callback(data.rows[0])
-    } catch (e) {
-        console.log(e)
-    } finally {
-        client.release()
-    }
+    run.queryWithParam(query.GET_USER_BY_NAME, name, (result) => {
+        callback(result.rows[0])
+    })
 }
 
 Users.prototype.getUserById = async function(id, callback) {
-    const client = await db.connect()
-    const query = "SELECT * FROM USERS WHERE uid = $1"
-    try {
-        const data = await db.query(query, [id])
-        callback(data.rows[0])
-    } catch (e) {
-        console.log(e)
-    } finally {
-        client.release()
-    }
+    run.queryWithParam(query.GET_USER_BY_ID, id, (result) => {
+        callback(result.rows[0])
+    })
 }
 
 module.exports = Users

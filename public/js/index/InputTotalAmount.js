@@ -16,6 +16,14 @@ function changeTotalPrices(input, price, productTotalPrice) {
             productCount = input.value
             calculateProductCost(productCount, price, productTotalPrice)
             alert("Количество товара в заказа должно быть больше нуля")
+        } else if (productCount > 100) {
+            alert(`
+            Количество товара в одной позиции не должно превышать 100.
+            Сейчас система автоматически установила максимальное значение
+            `)
+            input.value = 100
+            productCount = input.value
+            calculateProductCost(productCount, price, productTotalPrice)
         } else {
             calculateProductCost(productCount, price, productTotalPrice)
         }

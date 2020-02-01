@@ -24,6 +24,7 @@ function orderInfoTableFilling(name, price) {
 
     let $input = document.createElement("input")
     $input.className = "total-amount"
+    $input.type = "number"
     $input.value = 1
 
     $2_column.appendChild($1_spanMinus)

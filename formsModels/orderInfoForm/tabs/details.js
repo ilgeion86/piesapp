@@ -1,15 +1,15 @@
-let obj = Object.create(null)
+let detailsTab = Object.create(null)
 
-obj = {
-    1: ["Карта", "clientCard"],
+detailsTab = {
+    0: ["Карта", "clientCard"],
+    1: ["Имя", "clientName"],
     2: ["Телефон", "clientPhone"],
-    3: ["Имя", "clientName"],
-    4: ["Улица", "clientStreetName"],
-    5: ["Дом", "clientDuldNnumber"],
-    6: ["Подъезд", "clientFrontDoor"],
-    7: ["Этаж", "clientFloor"],
-    8: ["Кв. (офис)", "clientRoomNumber"],
-    9: ["Примечание", "clientAdditionalNotes"]
+    3: ["Улица", "clientStreetName"],
+    4: ["Дом", "clientDuldNnumber"],
+    5: ["Подъезд", "clientFrontDoor"],
+    6: ["Этаж", "clientFloor"],
+    7: ["Кв. (офис)", "clientRoomNumber"],
+    8: ["Примечание", "clientAdditionalNotes"]
 }
 
-module.exports = obj
+module.exports = detailsTab

@@ -1,11 +1,11 @@
-const db = require('../configs/db-connect').initdb()
+const db = require('../../configs/db-connect').initdb()
 
 /**
  * Запуск запроса без параметров
  * @qyerStr - запрос
  * @callback - колбек функция в которую передается результат запроса
  */
-module.exports.runQuery = async function(queryStr, callback) {
+module.exports.query = async function(queryStr, callback) {
     const client = await db.connect()
     const query = queryStr
     try {
@@ -18,7 +18,7 @@ module.exports.runQuery = async function(queryStr, callback) {
     }
 }
 
-module.exports.runQueryWithParam = async function(queryStr, param, callback) {
+module.exports.queryWithParam = async function(queryStr, param, callback) {
     const client = await db.connect()
     const query = queryStr
     try {

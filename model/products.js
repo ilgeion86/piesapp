@@ -1,5 +1,5 @@
-const runQuery = require('../secondaryFunctions/queryExecute').runQuery
-const runQueryWithParam = require('../secondaryFunctions/queryExecute').runQueryWithParam
+const run = require('./queryExec/queryExecute')
+const query = require('./queries/products')
 
 function Products() {
     this.p_id,
@@ -8,29 +8,14 @@ function Products() {
 }
 
 Products.prototype.getProducts = function(callback) {
-    const query = 'select * from products'
-
-    runQuery(query, (data) => {
+    run.query(query.GET_PRODUCTS, (data) => {
         callback(data.rows)
     })
 }
 Products.prototype.getProductsByCategoryId = function(categoryId, callback) {
-    const query = `
-    SELECT
-        pro.p_id,
-        pro.name,
-        pri.price as price,
-        cat.name as category
-    FROM products pro
-        INNER JOIN prices pri
-            ON pro.p_id = pri.product_id
-        INNER JOIN categories cat
-            ON pro.category = cat.c_id
-    WHERE cat.c_id = $1
-    `
 
     let param = categoryId
-    runQueryWithParam(query, param, (data) => {
+    run.queryWithParam(query.GET_PRODUCTS_BY_CATEGORY_ID, param, (data) => {
         callback(data.rows)
     })
 }

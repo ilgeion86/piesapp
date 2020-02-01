@@ -1,4 +1,5 @@
-const runQuery = require('../secondaryFunctions/queryExecute').runQuery
+const run = require('./queryExec/queryExecute')
+const query = require('./queries/categories')
 
 function Categories() {
     this.c_id,
@@ -6,8 +7,7 @@ function Categories() {
 }
 
 Categories.prototype.getCategories = function(callback) {
-    const query = 'select * from categories'
-    runQuery(query, (data) => {
+    run.query(query.GET_CATEGORIES, (data) => {
         callback(data.rows)
     })
 
